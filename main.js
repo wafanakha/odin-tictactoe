@@ -1,9 +1,9 @@
 const gameRule = function (player, com) {
-  const halo = () => {
-    console.log(player);
+  const rule = () => {
+    console.log();
   };
 
-  return { player, com, halo };
+  return { rule };
 };
 
 const test = gameRule();
