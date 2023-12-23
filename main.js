@@ -10,8 +10,9 @@ const gameRule = function (player, com) {
     [0, 4, 8],
     [2, 4, 6],
   ];
+  const combo = combination.join(",");
   const rule = () => {
-    if (combination.some((e) => e.join(",") == player.join(","))) {
+    if (combination.some(() => player.join(","))) {
       console.log("Youwwwinn");
     }
   };
