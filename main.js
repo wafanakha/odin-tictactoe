@@ -1,6 +1,20 @@
 const gameRule = function (player, com) {
   const set = [player, com];
-  const rule = () => {};
+  const combination = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  const rule = () => {
+    if (combination.some((e) => e.join(",") == player.join(","))) {
+      console.log("Youwwwinn");
+    }
+  };
 
   return { rule };
 };
