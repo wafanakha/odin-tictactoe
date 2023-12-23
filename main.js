@@ -1,13 +1,10 @@
-const game = function (player, com) {
-  const gameBoard = { player, com };
+const gameRule = function (player, com) {
+  const halo = () => {
+    console.log(player);
+  };
 
-  return { gameBoard };
+  return { player, com, halo };
 };
 
-const gameRule = function () {
-  const { gameBoard } = game([1, 2, 3], [2, 5, 6]);
-
-  const halo = () => console.log(gameBoard);
-
-  return { gameBoard, halo };
-};
+const test = gameRule();
+test.halo();
