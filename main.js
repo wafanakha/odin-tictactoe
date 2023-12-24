@@ -1,7 +1,6 @@
 const gameRule = function () {
   const player = [];
   const com = [];
-  console.log(player, com);
   const combination = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,22 +11,23 @@ const gameRule = function () {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  const playercomb = player.join(",");
-  const comcomb = com.join(",");
-  const combo = combination.map((e) => e.join(","));
+
   const rule = () => {
+    const playercomb = player.join(",");
+    const comcomb = com.join(",");
+    const combo = combination.map((e) => e.join(","));
     if (combo.some((e) => e == playercomb) || combo.some((e) => e == comcomb)) {
       return false;
     }
   };
   const start = () => {
-    while (rule()) {
+    do {
       player.push(prompt("player"));
       com.push(Math.floor(Math.random() * 9));
       console.log(player, com);
-    }
+    } while (rule());
   };
-  return { start };
+  return { rule, start };
 };
 
 const test = gameRule();
