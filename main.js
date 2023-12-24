@@ -1,5 +1,6 @@
 const gameRule = function () {
-  const { player, com } = gameSet();
+  const player = [];
+  const com = [];
   console.log(player, com);
   const combination = [
     [0, 1, 2],
@@ -19,14 +20,6 @@ const gameRule = function () {
       return false;
     }
   };
-
-  return { rule };
-};
-
-const gameSet = function () {
-  const { rule } = gameRule();
-  const player = [];
-  const com = [];
   const start = () => {
     while (rule()) {
       player.push(prompt("player"));
@@ -34,9 +27,8 @@ const gameSet = function () {
       console.log(player, com);
     }
   };
-  start();
-  return { player, com };
+  return { start };
 };
 
 const test = gameRule();
-test.rule();
+test.start();
