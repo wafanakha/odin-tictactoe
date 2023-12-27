@@ -21,6 +21,10 @@ const gameRule = function () {
     }
   };
   const start = () => {
+    player.push(prompt("player"));
+    com.push(Math.floor(Math.random() * 9));
+    player.push(prompt("player"));
+    com.push(Math.floor(Math.random() * 9));
     do {
       player.push(prompt("player"));
       com.push(Math.floor(Math.random() * 9));
