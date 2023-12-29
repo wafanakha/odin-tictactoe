@@ -40,7 +40,7 @@ const gameRule = function () {
       alert(`Player: ${player}, com: ${com}`);
     } while (rule());
   };
-  return { rule, start };
+  return { start };
 };
 
 const test = gameRule();
