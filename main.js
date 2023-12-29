@@ -13,8 +13,8 @@ const gameRule = function () {
   ];
 
   const rule = () => {
-    const playercomb = player.join(",");
-    const comcomb = com.join(",");
+    const playercomb = player.slice(-3).join(",");
+    const comcomb = com.slice(-3).join(",");
     const combo = combination.map((e) => e.join(","));
     if (combo.some((e) => e == playercomb)) {
       alert("PLAYER WIN");
