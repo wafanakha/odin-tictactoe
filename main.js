@@ -28,16 +28,16 @@ const gameRule = function () {
   const start = () => {
     player.push(prompt("player"));
     com.push(Math.floor(Math.random() * 9));
-    alert(`Player: ${player}, com: ${com}`);
+    alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
 
     player.push(prompt("player"));
     com.push(Math.floor(Math.random() * 9));
-    alert(`Player: ${player}, com: ${com}`);
+    alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
 
     do {
       player.push(prompt("player"));
       com.push(Math.floor(Math.random() * 9));
-      alert(`Player: ${player}, com: ${com}`);
+      alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
     } while (rule());
   };
   return { start };
