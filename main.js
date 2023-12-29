@@ -29,7 +29,7 @@ const gameRule = function () {
     do {
       player.push(prompt("player"));
       com.push(Math.floor(Math.random() * 9));
-      console.log(player, com);
+      alert(`Player: ${player}, com: ${com}`);
     } while (rule());
   };
   return { rule, start };
