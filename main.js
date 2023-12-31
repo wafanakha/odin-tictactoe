@@ -42,6 +42,3 @@ const gameRule = function () {
   };
   return { start };
 };
-
-const test = gameRule();
-test.start();
