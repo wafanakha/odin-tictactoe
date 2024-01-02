@@ -10,4 +10,9 @@ body {
   height: 30rem;
   width: 60rem;
   display: flex;
+  flex-direction: column;
+}
+.score {
+  height: 20%;
+  background-color: whitesmoke;
 }
