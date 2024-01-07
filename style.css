@@ -16,6 +16,7 @@ body {
 .score {
   height: 25%;
   background-color: whitesmoke;
+  border-radius: 5px;
 }
 .main {
   height: 80%;
