@@ -21,4 +21,5 @@ body {
 .main {
   height: 80%;
   background-color: antiquewhite;
+  border-radius: 5px;
 }
