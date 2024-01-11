@@ -33,21 +33,15 @@ const gameRule = function () {
     return true;
   };
 
+  const logic = (e) => {
+    console.log(e);
+    const entry = e.getAttribute("id");
+    player.push(entry);
+    com.push(Math.floor(Math.random() * 8));
+    e.style.backgroundColor = "black";
+  };
   const start = () => {
-    console.log(score);
-    player.push(prompt("player"));
-    com.push(Math.floor(Math.random() * 8));
-    alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
-
-    player.push(prompt("player"));
-    com.push(Math.floor(Math.random() * 8));
-    alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
-
-    do {
-      player.push(prompt("player"));
-      com.push(Math.floor(Math.random() * 8));
-      alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
-    } while (rule());
+    score.addEventListener("click", (e) => logic(e.currentTarget));
   };
   return { start };
 };
