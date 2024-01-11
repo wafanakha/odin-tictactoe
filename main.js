@@ -1,3 +1,9 @@
+const visualObject = function () {
+  const score = document.querySelector(".score");
+  const mainBoard = document.querySelector(".main div");
+  return { score, mainBoard };
+};
+
 const gameRule = function () {
   const player = [];
   const com = [];
@@ -25,6 +31,7 @@ const gameRule = function () {
     }
     return true;
   };
+
   const start = () => {
     player.push(prompt("player"));
     com.push(Math.floor(Math.random() * 8));
