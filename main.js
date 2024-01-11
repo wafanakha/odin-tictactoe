@@ -1,10 +1,11 @@
 const visualObject = function () {
   const score = document.querySelector(".score");
-  const mainBoard = document.querySelector(".main div");
+  const mainBoard = document.querySelectorAll(".main div");
   return { score, mainBoard };
 };
 
 const gameRule = function () {
+  const { score, mainBoard } = visualObject();
   const player = [];
   const com = [];
   const combination = [
@@ -33,6 +34,7 @@ const gameRule = function () {
   };
 
   const start = () => {
+    console.log(score);
     player.push(prompt("player"));
     com.push(Math.floor(Math.random() * 8));
     alert(`Player: ${player.slice(-3)} com: ${com.slice(-3)}`);
@@ -49,3 +51,6 @@ const gameRule = function () {
   };
   return { start };
 };
+
+let test = gameRule();
+test.start();
