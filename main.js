@@ -38,12 +38,15 @@ const gameRule = function () {
     const entry = e.getAttribute("id");
     player.push(entry);
     com.push(Math.floor(Math.random() * 8));
-    console.log(player);
+
+    rule();
   };
   const start = () => {
     mainBoard.forEach((e) =>
       e.addEventListener("click", (e) => logic(e.currentTarget))
     );
+    if (player.length >= 3) {
+    }
   };
   return { start };
 };
