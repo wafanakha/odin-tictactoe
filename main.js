@@ -25,12 +25,9 @@ const gameRule = function () {
     const combo = combination.map((e) => e.join(","));
     if (combo.some((e) => e == playercomb)) {
       alert("PLAYER WIN");
-      return false;
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
-      return false;
     }
-    return true;
   };
 
   const logic = (e) => {
@@ -41,6 +38,7 @@ const gameRule = function () {
 
     rule();
   };
+
   const start = () => {
     mainBoard.forEach((e) =>
       e.addEventListener("click", (e) => logic(e.currentTarget))
