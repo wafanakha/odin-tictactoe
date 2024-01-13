@@ -38,10 +38,12 @@ const gameRule = function () {
     const entry = e.getAttribute("id");
     player.push(entry);
     com.push(Math.floor(Math.random() * 8));
-    e.style.backgroundColor = "black";
+    console.log(player);
   };
   const start = () => {
-    score.addEventListener("click", (e) => logic(e.currentTarget));
+    mainBoard.forEach((e) =>
+      e.addEventListener("click", (e) => logic(e.currentTarget))
+    );
   };
   return { start };
 };
