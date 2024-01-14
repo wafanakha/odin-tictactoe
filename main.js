@@ -34,6 +34,9 @@ const gameRule = function () {
       mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
+      player = [];
+      com = [];
+      mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
     }
   };
 
@@ -52,8 +55,6 @@ const gameRule = function () {
     mainBoard.forEach((e) =>
       e.addEventListener("click", (e) => logic(e.currentTarget))
     );
-    if (player.length >= 3) {
-    }
   };
   return { start };
 };
