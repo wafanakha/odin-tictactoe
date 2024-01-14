@@ -36,7 +36,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
 }
 .main div {
-  border: 1px solid black;
+  border: 1px solid rgb(134, 111, 111);
 }
 .main div:hover {
   background-color: rgb(214, 195, 169);
