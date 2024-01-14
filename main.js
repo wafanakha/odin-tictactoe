@@ -43,6 +43,7 @@ const gameRule = function () {
   const logic = (e) => {
     console.log(e);
     const playerEntry = e.getAttribute("id");
+    e.style.backgroundColor = "black";
     player.push(playerEntry);
     const comEntry = Math.floor(Math.random() * 8);
     const comSelected = document.getElementById(`${comEntry}`);
