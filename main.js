@@ -36,10 +36,12 @@ const gameRule = function () {
 
   const logic = (e) => {
     console.log(e);
-    const entry = e.getAttribute("id");
-    player.push(entry);
-    com.push(Math.floor(Math.random() * 8));
-
+    const playerEntry = e.getAttribute("id");
+    player.push(playerEntry);
+    const comEntry = Math.floor(Math.random() * 8);
+    const comSelected = document.getElementById(`${comEntry}`);
+    comSelected.style.backgroundColor = "black";
+    com.push(comEntry);
     rule();
   };
 
