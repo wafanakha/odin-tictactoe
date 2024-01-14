@@ -23,7 +23,11 @@ const gameRule = function () {
     const playercomb = player.slice(-3).join(",");
     const comcomb = com.slice(-3).join(",");
     const combo = combination.map((e) => e.join(","));
-    if (combo.some((e) => e == playercomb)) {
+    const reversedcombo = combination.map((e) => e.reverse().join(","));
+    if (
+      combo.some((e) => e == playercomb) ||
+      reversedcombo.some((e) => e == playercomb)
+    ) {
       alert("PLAYER WIN");
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
