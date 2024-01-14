@@ -31,6 +31,7 @@ const gameRule = function () {
       alert("PLAYER WIN");
       player = [];
       com = [];
+      mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
     }
