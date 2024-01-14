@@ -41,9 +41,16 @@ const gameRule = function () {
   };
 
   const logic = (e) => {
-    console.log(e);
     const playerEntry = e.getAttribute("id");
-    e.style.backgroundColor = "black";
+    if (
+      com.some((e) => playerEntry == e) ||
+      player.some((e) => playerEntry == e)
+    ) {
+      alert("has been selected");
+      return;
+    }
+    console.log(e);
+    e.style.backgroundColor = "white";
     player.push(playerEntry);
     const comEntry = Math.floor(Math.random() * 8);
     const comSelected = document.getElementById(`${comEntry}`);
