@@ -6,8 +6,8 @@ const visualObject = function () {
 
 const gameRule = function () {
   const { score, mainBoard } = visualObject();
-  const player = [];
-  const com = [];
+  let player = [];
+  let com = [];
   const combination = [
     [0, 1, 2],
     [3, 4, 5],
@@ -29,6 +29,8 @@ const gameRule = function () {
       reversedcombo.some((e) => e == playercomb)
     ) {
       alert("PLAYER WIN");
+      player = [];
+      com = [];
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
     }
