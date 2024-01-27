@@ -18,7 +18,12 @@ const gameRule = function () {
     [0, 4, 8],
     [2, 4, 6],
   ];
-
+  const possib = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+  const reset = () => {
+    player = [];
+    com = [];
+    mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
+  };
   const rule = () => {
     const playercomb = player.slice(-3).join(",");
     const comcomb = com.slice(-3).join(",");
@@ -34,9 +39,7 @@ const gameRule = function () {
       mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
     } else if (combo.some((e) => e == comcomb)) {
       alert("COMPUTER WIN");
-      player = [];
-      com = [];
-      mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
+      reset();
     }
   };
 
@@ -52,19 +55,27 @@ const gameRule = function () {
     console.log(e);
     e.style.backgroundColor = "white";
     player.push(playerEntry);
-
-    let comEntry = Math.floor(Math.random() * 8);
-    while (
-      player.some((e) => e == comEntry.toString()) ||
-      com.some((e) => e == comEntry.toString())
-    ) {
-      comEntry = Math.floor(Math.random() * 8);
-    }
-    console.log(comEntry);
-    const comSelected = document.getElementById(`${comEntry}`);
-    comSelected.style.backgroundColor = "black";
-    com.push(comEntry);
     rule();
+
+    const all = player.concat(com);
+    if (possib.every((e) => all.some((f) => e == f))) {
+      alert("DRAW");
+      reset();
+    } else {
+      let comEntry = Math.floor(Math.random() * 8);
+      while (
+        player.some((e) => e == comEntry.toString()) ||
+        com.some((e) => e == comEntry.toString())
+      ) {
+        comEntry = Math.floor(Math.random() * 8);
+      }
+
+      console.log(comEntry);
+      const comSelected = document.getElementById(`${comEntry}`);
+      comSelected.style.backgroundColor = "black";
+      com.push(comEntry);
+      rule();
+    }
   };
 
   const start = () => {
