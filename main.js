@@ -25,14 +25,18 @@ const gameRule = function () {
     mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
   };
   const rule = () => {
-    const playercomb = player.slice(-3).join(",");
-    const comcomb = com.slice(-3).join(",");
-    const combo = combination.map((e) => e.join(","));
-    const reversedcombo = combination.map((e) => e.reverse().join(","));
-    if (
-      combo.some((e) => e == playercomb) ||
-      reversedcombo.some((e) => e == playercomb)
-    ) {
+    let winner = "";
+    const playercomb = player;
+    const comcomb = com;
+    const combo = combination.map((e) => e.map((el) => el.toString()));
+    const reversedcombo = combination.map((e) => e.reverse());
+    console.log(combo);
+    combination.forEach((e) => {
+      if (e.every((el) => player.some((elem) => el == elem))) {
+        winner = "player";
+      }
+    });
+    if (winner == "player") {
       alert("PLAYER WIN");
       player = [];
       com = [];
