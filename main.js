@@ -52,7 +52,15 @@ const gameRule = function () {
     console.log(e);
     e.style.backgroundColor = "white";
     player.push(playerEntry);
-    const comEntry = Math.floor(Math.random() * 8);
+
+    let comEntry = Math.floor(Math.random() * 8);
+    while (
+      player.some((e) => e == comEntry.toString()) ||
+      com.some((e) => e == comEntry.toString())
+    ) {
+      comEntry = Math.floor(Math.random() * 8);
+    }
+    console.log(comEntry);
     const comSelected = document.getElementById(`${comEntry}`);
     comSelected.style.backgroundColor = "black";
     com.push(comEntry);
