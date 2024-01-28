@@ -26,22 +26,19 @@ const gameRule = function () {
   };
   const rule = () => {
     let winner = "";
-    const playercomb = player;
-    const comcomb = com;
     const combo = combination.map((e) => e.map((el) => el.toString()));
-    const reversedcombo = combination.map((e) => e.reverse());
     console.log(combo);
-    combination.forEach((e) => {
+    combo.forEach((e) => {
       if (e.every((el) => player.some((elem) => el == elem))) {
         winner = "player";
+      } else if (e.every((el) => com.some((elem) => el == elem))) {
+        winner = "com";
       }
     });
     if (winner == "player") {
       alert("PLAYER WIN");
-      player = [];
-      com = [];
-      mainBoard.forEach((e) => (e.style.backgroundColor = "antiquewhite"));
-    } else if (combo.some((e) => e == comcomb)) {
+      reset();
+    } else if (winner == "com") {
       alert("COMPUTER WIN");
       reset();
     }
@@ -77,7 +74,7 @@ const gameRule = function () {
       console.log(comEntry);
       const comSelected = document.getElementById(`${comEntry}`);
       comSelected.style.backgroundColor = "black";
-      com.push(comEntry);
+      com.push(comEntry.toString());
       rule();
     }
   };
