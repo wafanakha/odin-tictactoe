@@ -7,6 +7,8 @@ const visualObject = function () {
 
 const gameRule = function () {
   const { playerScore, ComScore, mainBoard } = visualObject();
+  let playerWin = 0;
+  let comWin = 0;
   let player = [];
   let com = [];
   const combination = [
@@ -38,9 +40,11 @@ const gameRule = function () {
     });
     if (winner == "player") {
       alert("PLAYER WIN");
+      playerWin++;
       reset();
     } else if (winner == "com") {
       alert("COMPUTER WIN");
+      comWin++;
       reset();
     }
   };
