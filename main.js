@@ -1,7 +1,8 @@
 const visualObject = function () {
-  const score = document.querySelector(".score");
+  const playerScore = document.querySelector("#playerScore");
+  const ComScore = document.querySelector("#comScore");
   const mainBoard = document.querySelectorAll(".main div");
-  return { score, mainBoard };
+  return { playerScore, ComScore, mainBoard };
 };
 
 const gameRule = function () {
