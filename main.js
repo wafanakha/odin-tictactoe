@@ -6,7 +6,7 @@ const visualObject = function () {
 };
 
 const gameRule = function () {
-  const { score, mainBoard } = visualObject();
+  const { playerScore, ComScore, mainBoard } = visualObject();
   let player = [];
   let com = [];
   const combination = [
