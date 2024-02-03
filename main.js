@@ -1,12 +1,12 @@
 const visualObject = function () {
   const playerScore = document.querySelector("#playerScore");
-  const ComScore = document.querySelector("#comScore");
+  const comScore = document.querySelector("#comScore");
   const mainBoard = document.querySelectorAll(".main div");
-  return { playerScore, ComScore, mainBoard };
+  return { playerScore, comScore, mainBoard };
 };
 
 const gameRule = function () {
-  const { playerScore, ComScore, mainBoard } = visualObject();
+  const { playerScore, comScore, mainBoard } = visualObject();
   let playerWin = 0;
   let comWin = 0;
   let player = [];
@@ -30,7 +30,6 @@ const gameRule = function () {
   const rule = () => {
     let winner = "";
     const combo = combination.map((e) => e.map((el) => el.toString()));
-    console.log(combo);
     combo.forEach((e) => {
       if (e.every((el) => player.some((elem) => el == elem))) {
         winner = "player";
@@ -41,15 +40,20 @@ const gameRule = function () {
     if (winner == "player") {
       alert("PLAYER WIN");
       playerWin++;
+      playerScore.innerHTML = `Player: ${playerWin}`;
       reset();
     } else if (winner == "com") {
       alert("COMPUTER WIN");
       comWin++;
+      comScore.innerHTML = `Player: ${comWin}`;
       reset();
     }
   };
 
   const logic = (e) => {
+    playerScore.innerHTML = `Player: ${playerWin}`;
+    comScore.innerHTML = `Player: ${comWin}`;
+
     const playerEntry = e.getAttribute("id");
     if (
       com.some((e) => playerEntry == e) ||
